@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 17:51:57 by michel_32         #+#    #+#             */
-/*   Updated: 2026/01/26 18:17:30 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/01/26 18:39:32 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,21 @@ void    z::announce()
 Zombie::Zombie(std::string name)
 {
     this->_name = name;
-    this->announce();
 }
 
 Zombie::~Zombie()
 {
+}
+
+Zombie  *newZombie(std::string name)
+{
+    Zombie  *newbie = new Zombie(name);
+
+    return (newbie);
+}
+
+void    randomChump(std::string name)
+{
+    Zombie new_chump = Zombie(name);
+    new_chump.announce();
 }

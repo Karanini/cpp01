@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 17:51:57 by michel_32         #+#    #+#             */
-/*   Updated: 2026/01/26 18:39:32 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/01/26 18:50:12 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Zombie::Zombie(std::string name)
 
 Zombie::~Zombie()
 {
+    std::cout << this->_name << " has been destroyed have a nice one BYYYEEE" << std::endl;
 }
 
 Zombie  *newZombie(std::string name)

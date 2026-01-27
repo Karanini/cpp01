@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 17:51:47 by michel_32         #+#    #+#             */
-/*   Updated: 2026/01/27 13:16:15 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/01/27 13:17:08 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ public:
 };
 
 Zombie* zombieHorde( int N, std::string name );
- 
+
 typedef Zombie  z;
 

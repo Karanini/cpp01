@@ -6,13 +6,13 @@
 #    By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 14:08:56 by bkaras-g          #+#    #+#              #
-#    Updated: 2026/01/27 13:12:24 by michel_32        ###   ########.fr        #
+#    Updated: 2026/01/27 13:26:03 by michel_32        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .SILENT:
 
-NAME = brainZ
+NAME = zombieHorde
 
 SRC = Zombie.cpp \
 		zombieHorde.cpp \

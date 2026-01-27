@@ -5,20 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/26 18:09:11 by michel_32         #+#    #+#             */
-/*   Updated: 2026/01/27 13:24:29 by michel_32        ###   ########.fr       */
+/*   Created: 2026/01/27 13:27:29 by michel_32         #+#    #+#             */
+/*   Updated: 2026/01/27 13:33:06 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <string>
+#include <iostream>
 
 int main(void)
 {
-    int nb_zombies = 32;
+    std::string hi_brain = "HI THIS IS BRAIN";
+    std::string *stringPTR = &hi_brain;
+    std::string &stringREF = hi_brain;
 
-    Zombie  *Freddy_hordy = zombieHorde(nb_zombies, "Freddy");
-    for (int i = 0; i < nb_zombies; i++)
-        Freddy_hordy[i].announce();
-    delete [] Freddy_hordy;
-    return (0);
+    std::cout << "memory address of the string variable: " << (void *)hi_brain << std::endl;
 }

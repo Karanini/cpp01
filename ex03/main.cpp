@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 10:53:34 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/01/28 12:34:27 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/01/28 13:36:19 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main(void)
 	jim.setWeapon(club);
 	jim.attack();
 	club.setType("some other type of club");
+	std::cout << club.getType() << std::endl;
 	jim.attack();
 	return (0);
 }

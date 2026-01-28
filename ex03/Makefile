@@ -6,7 +6,7 @@
 #    By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 14:08:56 by bkaras-g          #+#    #+#              #
-#    Updated: 2026/01/28 10:56:30 by bkaras-g         ###   ########.fr        #
+#    Updated: 2026/01/28 11:43:22 by bkaras-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ HEADERS = HumanA.hpp \
 RM = rm -f
 OBJ := $(patsubst %.cpp, %.o, $(SRC))
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -ggdb
 
 all: $(NAME)
 

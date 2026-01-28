@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 10:53:34 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/01/28 11:14:20 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/01/28 12:34:27 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,12 @@ int main(void)
 	touillette.setType("touillette en fibre de bambou cosmique");
 	std::cout << touillette.getType() << std::endl;
 	Rambo.attack();
+
+	Weapon club = Weapon("crude spiked club");
+	HumanB jim("Jim");
+	jim.setWeapon(club);
+	jim.attack();
+	club.setType("some other type of club");
+	jim.attack();
 	return (0);
 }

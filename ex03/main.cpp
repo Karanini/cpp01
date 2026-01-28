@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 10:53:34 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/01/28 13:36:19 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/01/28 14:05:54 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,13 @@ int main(void)
 	HumanA Rambo = HumanA(touillette, "Rambo the baddest of them all");
 	Rambo.attack();
 	touillette.setType("touillette en fibre de bambou cosmique");
-	std::cout << touillette.getType() << std::endl;
 	Rambo.attack();
 
-	Weapon club = Weapon("crude spiked club");
+	Weapon club = Weapon("sandwich club poulet crudités");
 	HumanB jim("Jim");
 	jim.setWeapon(club);
 	jim.attack();
-	club.setType("some other type of club");
-	std::cout << club.getType() << std::endl;
+	club.setType("sandwich club triple XXL ketchup mayo moutarde miel");
 	jim.attack();
 	return (0);
 }

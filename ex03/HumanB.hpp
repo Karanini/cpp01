@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:46:58 by michel_32         #+#    #+#             */
-/*   Updated: 2026/01/28 13:43:15 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/01/28 13:54:26 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ private:
     std::string _name;
 public:
 	HumanB(std::string name);
-	~HumanB();
-	void	setWeapon(Weapon weapon);
+	void	setWeapon(Weapon &weapon);
     void    attack();
 };
 

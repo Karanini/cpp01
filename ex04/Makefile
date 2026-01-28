@@ -6,13 +6,13 @@
 #    By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 14:08:56 by bkaras-g          #+#    #+#              #
-#    Updated: 2026/01/28 15:29:08 by bkaras-g         ###   ########.fr        #
+#    Updated: 2026/01/28 16:07:48 by bkaras-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .SILENT:
 
-NAME = filestream
+NAME = copy_and_replace
 
 SRC = main.cpp
 

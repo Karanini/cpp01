@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
+/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:46:58 by michel_32         #+#    #+#             */
-/*   Updated: 2026/01/27 18:03:14 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/01/28 10:43:39 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef HUMAN_A
 # define HUMAN_A
 #include "Weapon.hpp"
+#include <string>
+#include <iostream>
 
 class HumanA
 {

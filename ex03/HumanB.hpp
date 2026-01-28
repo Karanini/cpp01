@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
+/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 17:46:58 by michel_32         #+#    #+#             */
-/*   Updated: 2026/01/27 18:06:29 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/01/28 10:43:42 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef HUMAN_B
 # define HUMAN_B
 #include "Weapon.hpp"
+#include <string>
+#include <iostream>
 
 class HumanB
 {

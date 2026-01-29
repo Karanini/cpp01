@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:42:36 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/01/29 15:16:46 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/01/29 15:52:18 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ private:
 	void	error(void);
 public:
 	void	complain(std::string level);
+	void	(Harl::*debug_ptr)(void);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:17:21 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/01/29 15:20:01 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/01/29 15:53:01 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,11 @@ void	Harl::error(void)
 {
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 
+}
+
+void	Harl::complain(std::string level)
+{
+	(void)level;
+	debug_ptr = &Harl::debug;
+	(this->*debug_ptr)();
 }

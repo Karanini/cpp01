@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 14:29:08 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/01/29 12:22:12 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/01/29 12:31:31 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #include <iostream>
 #include <fstream>
 
-int	get_input(char *filename, std::string *str);
+int		get_input(char *filename, std::string *str);
 void	replace_occurences(std::string *str, char *av[]);
+void	create_output(char *c_filename, std::string str);
 
 int	main(int ac, char *av[])
 {
@@ -33,7 +34,8 @@ int	main(int ac, char *av[])
 	if (get_input(av[1], &str))
 		return (1);
 	replace_occurences(&str, av);
-	std::cout << str;
+	create_output(av[1], str);
+	// std::cout << str;
 	return (0);
 }
 
@@ -78,4 +80,12 @@ void	replace_occurences(std::string *str, char *av[])
 		}
 		it++;
 	}
+}
+
+void	create_output(char *c_filename, std::string str)
+{
+	std::string		filename = c_filename;
+	filename += ".replace";
+	std::ofstream	ofs(filename.c_str());
+	ofs << str;
 }

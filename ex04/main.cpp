@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 14:29:08 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/01/29 11:12:46 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/01/29 11:38:44 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int ac, char *av[])
 {
 	if (ac != 4)
 	{
-		std::cerr << "usage: ./filestream filename string_to_replace new_string" << std::endl;
+		std::cerr << "usage: ./copy_and_replace filename string_to_replace new_string" << std::endl;
 		return (1);
 	}
 
@@ -28,7 +28,7 @@ int	main(int ac, char *av[])
 	std::string		filename = av[1];
 	std::string s1 = av[2];
 	std::string s2 = av[3];
-	filename.append(".replace");
+	filename += ".replace";
 	std::ofstream	ofs(filename.c_str());
 
 	// std::string::iterator it = str.begin();

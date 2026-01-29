@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 14:29:08 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/01/29 12:20:12 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/01/29 12:22:12 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ void	replace_occurences(std::string *str, char *av[])
 		if (!(*str).compare(it - (*str).begin(), s1_size, s1))
 		{
 			size_t pos = it - (*str).begin(); //need to save the pos because erase/insert invalidates any iterator of (*str)
-			(*str).erase(it - (*str).begin(), s1_size);
-			(*str).insert(it - (*str).begin(), s2);
-			it = (*str).begin() + pos + s2.size() - 1; //restore 'it'
+			(*str).erase(pos, s1_size);
+			(*str).insert(pos, s2);
+			it = (*str).begin() + pos + s2.size() - 1; //restore 'it', -1 because it++ just after this line
 		}
 		it++;
 	}

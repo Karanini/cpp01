@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 14:29:08 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/01/29 11:38:44 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/01/29 12:20:12 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <fstream>
 
 int	get_input(char *filename, std::string *str);
+void	replace_occurences(std::string *str, char *av[]);
 
 int	main(int ac, char *av[])
 {
@@ -26,17 +27,13 @@ int	main(int ac, char *av[])
 
 	std::string		str;
 	std::string		filename = av[1];
-	std::string s1 = av[2];
-	std::string s2 = av[3];
 	filename += ".replace";
 	std::ofstream	ofs(filename.c_str());
 
-	// std::string::iterator it = str.begin();
-
 	if (get_input(av[1], &str))
 		return (1);
+	replace_occurences(&str, av);
 	std::cout << str;
-
 	return (0);
 }
 
@@ -62,4 +59,23 @@ int	get_input(char *filename, std::string *str)
         *str += tmp;
     }
     return (0);
+}
+
+void	replace_occurences(std::string *str, char *av[])
+{
+	std::string s1 = av[2];
+	std::string s2 = av[3];
+	size_t	s1_size = s1.size();
+	std::string::iterator it = (*str).begin();
+	while (*it)
+	{
+		if (!(*str).compare(it - (*str).begin(), s1_size, s1))
+		{
+			size_t pos = it - (*str).begin(); //need to save the pos because erase/insert invalidates any iterator of (*str)
+			(*str).erase(it - (*str).begin(), s1_size);
+			(*str).insert(it - (*str).begin(), s2);
+			it = (*str).begin() + pos + s2.size() - 1; //restore 'it'
+		}
+		it++;
+	}
 }

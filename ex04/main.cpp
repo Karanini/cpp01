@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 14:29:08 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/01/28 16:48:00 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/01/29 10:56:19 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,17 @@ int	main(int ac, char *av[])
 		return (1);
 	}
 
-	std::string::iterator it = str.begin();
+	// std::string::iterator it = str.begin();
 	std::string s1 = av[2];
 	std::string s2 = av[3];
-	size_t			s1_size = s1.size();
-	size_t			s2_size = s2.size();
-	while (std::getline(ifs, str))
+	std::string tmp;
+	while(std::getline(ifs, tmp))
 	{
-		if (str.compare(str[it], s1_size, s1))
-		ofs << str << '\n';
+		if (*str.begin())
+			str += '\n';
+		str += tmp;
 	}
+	std::cout << str;
 
 	return (0);
 }

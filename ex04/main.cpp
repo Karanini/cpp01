@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 14:29:08 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/01/29 14:19:28 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/01/29 14:28:53 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,15 @@ int		get_input(char *filename, std::string *str);
 void	replace_occurences(std::string *str, char *av[]);
 int		create_output(char *c_filename, std::string str);
 
+/*
+* Note: all the messages are on stdout, as required by the subject. But it
+* would have been more relevant to output the error messages on std::cerr
+*/
 int	main(int ac, char *av[])
 {
 	if (ac != 4)
 	{
-		std::cerr << "usage: ./copy_and_replace filename string_to_replace new_string" << std::endl;
+		std::cout << "usage: ./copy_and_replace filename string_to_replace new_string" << std::endl;
 		return (1);
 	}
 
@@ -36,7 +40,6 @@ int	main(int ac, char *av[])
 	replace_occurences(&str, av);
 	if (create_output(av[1], str))
 		return (1);
-	// std::cout << str;
 	return (0);
 }
 
@@ -46,12 +49,12 @@ int	get_input(char *filename, std::string *str)
 
     if (!ifs.is_open())
     {
-        std::cerr << "Error: Could not open file " << filename << std::endl;
+        std::cout << "Error: Could not open file " << filename << std::endl;
         return (1);
     }
 	if (ifs.peek() == std::ifstream::traits_type::eof())
     {
-        std::cerr << "Error: File is empty" << std::endl;
+        std::cout << "Error: File is empty" << std::endl;
         return (1);
     }
     std::string tmp;
@@ -95,7 +98,7 @@ int	create_output(char *c_filename, std::string str)
 	}
 	else
 	{
-		std::cerr << "Error creating " << filename << ". Check write access if a file with the same name exists." << std::endl;
+		std::cout << "Error creating " << filename << ". Check write access if a file with the same name exists." << std::endl;
 		return (1);
 	}
 }

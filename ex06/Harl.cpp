@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:17:21 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/02 13:24:21 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/02 13:43:18 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,25 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
+	int	choice = 32;
+
 	for(int i = 0; i < 4; i++)
 	{
 		if (!this->levels_tab[i].compare(level))
+			choice = i;
+	}
+	switch (choice)
+	{
+	case 32:
+	{
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		break;
+	}
+	default:
+	{
+		for(int i = choice; i < 4; i++)
 			(this->*functions[i])();
+		break;
+	}
 	}
 }

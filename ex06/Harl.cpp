@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:17:21 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/02 13:48:37 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/02 15:33:21 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ typedef		void(Harl::*function_ptr)();
 //C++98 strictly requires the & operator for member function pointers.
 Harl::Harl()
 {
-	this->functions[0] = &Harl::debug;
-    this->functions[1] = &Harl::info;
-    this->functions[2] = &Harl::warning;
-    this->functions[3] = &Harl::error;
-	this->levels_tab[0] = "DEBUG";
-	this->levels_tab[1] = "INFO";
-	this->levels_tab[2] = "WARNING";
-	this->levels_tab[3] = "ERROR";
+	this->_functions[0] = &Harl::debug;
+    this->_functions[1] = &Harl::info;
+    this->_functions[2] = &Harl::warning;
+    this->_functions[3] = &Harl::error;
+	this->_levels_tab[0] = "DEBUG";
+	this->_levels_tab[1] = "INFO";
+	this->_levels_tab[2] = "WARNING";
+	this->_levels_tab[3] = "ERROR";
 }
 
 void	Harl::debug(void)
@@ -61,7 +61,7 @@ void	Harl::complain(std::string level)
 
 	for(int i = 0; i < 4; i++)
 	{
-		if (!this->levels_tab[i].compare(level))
+		if (!this->_levels_tab[i].compare(level))
 			choice = i;
 	}
 	switch (choice)
@@ -74,7 +74,7 @@ void	Harl::complain(std::string level)
 	default:
 	{
 		for(int i = choice; i < 4; i++)
-			(this->*functions[i])();
+			(this->*_functions[i])();
 		break;
 	}
 	}

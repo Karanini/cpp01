@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:42:36 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/02 13:25:49 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/02 15:33:18 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ private:
 	void	info(void);
 	void	warning(void);
 	void	error(void);
-	function_ptr	functions[4];
-	std::string	levels_tab[4];
+	function_ptr	_functions[4];
+	std::string	_levels_tab[4];
 public:
 	Harl();
 	void	complain(std::string level);

@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:17:21 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/02 13:07:53 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/02 13:24:21 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,12 @@ void	Harl::error(void)
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 
 }
-// (this->*debug_ptr)();
+
 void	Harl::complain(std::string level)
 {
 	for(int i = 0; i < 4; i++)
 	{
 		if (!this->levels_tab[i].compare(level))
 			(this->*functions[i])();
-		i++;
 	}
 }

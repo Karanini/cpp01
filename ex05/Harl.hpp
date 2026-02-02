@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 14:42:36 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/02 13:04:57 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/02 13:25:49 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@
 #include <string>
 #include <iostream>
 
+
 class	Harl
 {
-typedef		void(Harl::*function_ptr)();
+typedef		void(Harl::*function_ptr)(); //good practice for function pointers
 private:
 	void 	debug(void);
 	void	info(void);
@@ -29,7 +30,6 @@ private:
 public:
 	Harl();
 	void	complain(std::string level);
-	// void	(Harl::*debug_ptr)(void)[4];
 };
 
 #endif

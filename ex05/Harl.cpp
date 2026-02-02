@@ -3,14 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:17:21 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/01/29 15:53:01 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/02 13:07:53 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+
+typedef		void(Harl::*function_ptr)();
+
+//C++98 strictly requires the & operator for member function pointers.
+Harl::Harl()
+{
+	this->functions[0] = &Harl::debug;
+    this->functions[1] = &Harl::info;
+    this->functions[2] = &Harl::warning;
+    this->functions[3] = &Harl::error;
+	this->levels_tab[0] = "debug";
+	this->levels_tab[1] = "info";
+	this->levels_tab[2] = "warning";
+	this->levels_tab[3] = "error";
+}
 
 void	Harl::debug(void)
 {
@@ -32,10 +47,13 @@ void	Harl::error(void)
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 
 }
-
+// (this->*debug_ptr)();
 void	Harl::complain(std::string level)
 {
-	(void)level;
-	debug_ptr = &Harl::debug;
-	(this->*debug_ptr)();
+	for(int i = 0; i < 4; i++)
+	{
+		if (!this->levels_tab[i].compare(level))
+			(this->*functions[i])();
+		i++;
+	}
 }

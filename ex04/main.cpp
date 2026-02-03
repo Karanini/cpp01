@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 14:29:08 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/01/29 14:28:53 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/03 14:59:22 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int	get_input(char *filename, std::string *str)
             *str += '\n';
         *str += tmp;
     }
+	*str += '\n';
     return (0);
 }
 

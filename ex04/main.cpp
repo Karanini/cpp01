@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 14:29:08 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/03 17:46:12 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/03 18:00:11 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,18 @@ int	main(int ac, char *av[])
 	return (0);
 }
 
+/*
+Replace the loop with a raw copy that preserves every byte (including \0 if any):
+Using iterators:
+std::string content((std::istreambuf_iterator<char>(ifs)),
+std::istreambuf_iterator<char>());
+*str = std::move(content);
+Or using rdbuf:
+std::ostringstream oss;
+oss << ifs.rdbuf();
+*str = oss.str();
+These preserve exact bytes and do not add or remove newlines. They also handle empty files as expected.
+*/
 int	get_input(char *filename, std::string *str)
 {
     std::ifstream	ifs(filename);
@@ -65,6 +77,19 @@ int	get_input(char *filename, std::string *str)
     return (0);
 }
 
+/*
+Do not iterate by checking *it. Use a size/index-based loop or iterator comparison to end() and do proper find/replace. Example using string::find in a safe loop:
+size_t pos = 0;
+while (true) {
+pos = str->find(s1, pos);
+if (pos == std::string::npos) break;
+str->erase(pos, s1_size);
+str->insert(pos, s2);
+pos += s2.size(); // move past the inserted text
+}
+This avoids dereferencing invalid iterators and correctly handles NUL bytes inside the string (find works on the whole string length).
+
+*/
 void	replace_occurences(std::string *str, char *av[])
 {
 	std::string s1 = av[2];

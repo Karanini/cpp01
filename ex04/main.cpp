@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 14:29:08 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/03 18:00:11 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/04 14:41:46 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ int	main(int ac, char *av[])
 		std::cout << "usage: ./copy_and_replace filename string_to_replace new_string" << std::endl;
 		return (1);
 	}
+	if (!av[2][0])
+	{
+		std::cout << "I can not replace nothing by something - Lao-Tseu" << std::endl;
+		return (1);
+	}
 
 	std::string		str;
 
@@ -41,16 +46,8 @@ int	main(int ac, char *av[])
 }
 
 /*
-Replace the loop with a raw copy that preserves every byte (including \0 if any):
-Using iterators:
-std::string content((std::istreambuf_iterator<char>(ifs)),
-std::istreambuf_iterator<char>());
-*str = std::move(content);
-Or using rdbuf:
-std::ostringstream oss;
-oss << ifs.rdbuf();
-*str = oss.str();
-These preserve exact bytes and do not add or remove newlines. They also handle empty files as expected.
+Checks for potential errors of input file `filename` and copies the content to `str`
+Note: getline() throws away the `\n` so need to put it back, unless EOF is reached
 */
 int	get_input(char *filename, std::string *str)
 {
@@ -69,33 +66,21 @@ int	get_input(char *filename, std::string *str)
     std::string tmp;
     while(std::getline(ifs, tmp))
     {
-        if (!str->empty())
+		*str += tmp;
+        if (!ifs.eof())
             *str += '\n';
-        *str += tmp;
     }
-	*str += '\n';
     return (0);
 }
 
-/*
-Do not iterate by checking *it. Use a size/index-based loop or iterator comparison to end() and do proper find/replace. Example using string::find in a safe loop:
-size_t pos = 0;
-while (true) {
-pos = str->find(s1, pos);
-if (pos == std::string::npos) break;
-str->erase(pos, s1_size);
-str->insert(pos, s2);
-pos += s2.size(); // move past the inserted text
-}
-This avoids dereferencing invalid iterators and correctly handles NUL bytes inside the string (find works on the whole string length).
 
-*/
 void	replace_occurences(std::string *str, char *av[])
 {
 	std::string s1 = av[2];
 	std::string s2 = av[3];
 	size_t	s1_size = s1.size();
 	std::string::iterator it = (*str).begin();
+
 	while (*it)
 	{
 		if (!(*str).compare(it - (*str).begin(), s1_size, s1))

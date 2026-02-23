@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:17:21 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/02 15:33:15 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/23 14:46:55 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ Harl::Harl()
     this->_functions[1] = &Harl::info;
     this->_functions[2] = &Harl::warning;
     this->_functions[3] = &Harl::error;
-	this->_levels_tab[0] = "debug";
-	this->_levels_tab[1] = "info";
-	this->_levels_tab[2] = "warning";
-	this->_levels_tab[3] = "error";
+	this->_levels_tab[0] = "DEBUG";
+	this->_levels_tab[1] = "INFO";
+	this->_levels_tab[2] = "WARNING";
+	this->_levels_tab[3] = "ERROR";
 }
 
 void	Harl::debug(void)

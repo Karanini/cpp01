@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 17:51:57 by michel_32         #+#    #+#             */
-/*   Updated: 2026/01/26 18:50:12 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/23 11:54:40 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void    z::announce()
     std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-Zombie::Zombie(std::string name)
+z::Zombie(std::string name)
 {
     this->_name = name;
 }
 
-Zombie::~Zombie()
+z::~Zombie()
 {
     std::cout << this->_name << " has been destroyed have a nice one BYYYEEE" << std::endl;
 }

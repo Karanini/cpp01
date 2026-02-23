@@ -16,7 +16,7 @@
 * You do not need new here because HumanB is designed to point to an existing
 Weapon created elsewhere (in main), rather than creating and owning a new one itself.
 */
-HumanB::HumanB(std::string name)
+HumanB::HumanB(const std::string &name)
 {
 	this->_name = name;
 	this->_weapon = NULL;

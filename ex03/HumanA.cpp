@@ -24,7 +24,7 @@ Since references must be initialized upon creation and cannot be reassigned,
 (you can't use = in the constructor body),
 you must use the Member Initializer List.
 */
-HumanA::HumanA(Weapon &weapon, std::string name) : _weapon(weapon), _name(name)
+HumanA::HumanA(Weapon &weapon, const std::string &name) : _weapon(weapon), _name(name)
 {
 
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 14:29:08 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/02/04 14:41:46 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/23 14:16:57 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ int	get_input(char *filename, std::string *str)
 
     if (!ifs.is_open())
     {
-        std::cout << "Error: Could not open file " << filename << std::endl;
+        std::cout << "Error: Could not open file \"" << filename << "\"" << std::endl;
         return (1);
     }
 	if (ifs.peek() == std::ifstream::traits_type::eof())
     {
-        std::cout << "Error: File is empty" << std::endl;
+        std::cout << "Error: file \"" <<  filename << "\" is empty" << std::endl;
         return (1);
     }
     std::string tmp;
@@ -106,7 +106,7 @@ int	create_output(char *c_filename, std::string str)
 	}
 	else
 	{
-		std::cout << "Error creating " << filename << ". Check write access if a file with the same name exists." << std::endl;
+		std::cout << "Error creating \"" << filename << "\". Check write access if a file with the same name exists." << std::endl;
 		return (1);
 	}
 }

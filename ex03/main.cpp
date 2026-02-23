@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 10:53:34 by bkaras-g          #+#    #+#             */
-/*   Updated: 2026/01/28 14:05:54 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/23 14:00:00 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,23 @@ int main(void)
 	jim.attack();
 	return (0);
 }
+
+// int	main(void)
+// {
+// 	{
+// 		Weapon club = Weapon("crude spiked club");
+// 		HumanA bob(club, "Bob");
+// 		bob.attack();
+// 		club.setType("some other type of club");
+// 		bob.attack();
+// 	}
+// 	{
+// 		Weapon club = Weapon("crude spiked club");
+// 		HumanB jim("Jim");
+// 		jim.setWeapon(club);
+// 		jim.attack();
+// 		club.setType("some other type of club");
+// 		jim.attack();
+// 	}
+// 	return (0);
+// }
